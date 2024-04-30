@@ -1,7 +1,5 @@
 import { Draggable } from '@hello-pangea/dnd';
-import * as S from './styles';
 import { Input } from '.';
-import { HelpIcon } from '../Icons';
 import { IconType } from '@src/types/types';
 
 interface InputProps {
