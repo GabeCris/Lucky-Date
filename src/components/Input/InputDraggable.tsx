@@ -1,6 +1,6 @@
 import { Draggable } from '@hello-pangea/dnd';
 import { Input } from '.';
-import { IconType } from '@src/types/types';
+import { Icon } from "@src/components/Icons/types";
 
 interface InputProps {
     data: any;
@@ -18,9 +18,9 @@ const InputDraggable = ({ data, index, onClick }: InputProps) => {
                     ref={provided.innerRef}
                 >
                     <Input.Root isDraggable>
-                        <Input.Icon icon={IconType.DRAG} />
+                        <Input.Icon icon={Icon.DRAG} />
                         <Input.Text value={data.name} />
-                        <Input.Icon icon={IconType.TRASH} action={onClick} />
+                        <Input.Icon icon={Icon.TRASH} action={onClick} />
                     </Input.Root>
                 </div>
             )}

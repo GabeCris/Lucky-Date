@@ -1,8 +1,8 @@
-import IconComponents from "@src/types/iconMapping";
-import { IconType } from "@src/types/types";
+import IconComponents from "@src/components/Icons/types";
+import { Icon } from "@src/components/Icons/types";
 
 interface ButtonProps {
-    icon: IconType;
+    icon: Icon;
 }
 
 const ButtonIcon = ({ icon }: ButtonProps) => {

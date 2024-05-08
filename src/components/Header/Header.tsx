@@ -2,7 +2,7 @@ import { Button } from '@src/components/Button';
 import { LuckyDateIcon } from '../Icons'
 
 import * as S from './styles'
-import { IconType } from '@src/types/types';
+import { Icon } from "@src/components/Icons/types";
 import { useNavigate } from 'react-router-dom';
 
 const Header = () => {
@@ -11,14 +11,14 @@ const Header = () => {
 
     return (
         <S.Header>
-            <LuckyDateIcon onClick={backToHome}/>
+            <LuckyDateIcon onClick={backToHome} />
             <S.Actions>
                 <Button.Root>
-                    <Button.Icon icon={IconType.HELP} />
+                    <Button.Icon icon={Icon.HELP} />
                 </Button.Root>
 
                 <Button.Root isPrimary>
-                    <Button.Icon icon={IconType.RANDOM} />
+                    <Button.Icon icon={Icon.RANDOM} />
                 </Button.Root>
 
             </S.Actions>

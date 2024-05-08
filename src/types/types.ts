@@ -15,15 +15,3 @@ export enum Colors {
     LIGHT_BLUE_1 = "#666E97",
     LIGHT_BLUE_2 = "#4D5B97",
 }
-
-export enum IconType {
-    MOVIE = 'movie',
-    FOOD = 'food',
-    HELP = 'help',
-    DICE = "dice",
-    RANDOM = "random",
-    DRAG = "drag",
-    TRASH = "trash",
-}
-
-

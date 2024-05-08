@@ -1,9 +1,9 @@
-import IconComponents from '@src/types/iconMapping'; // Importe o mapeamento de ícones
-import { IconType } from "@src/types/types";
+import IconComponents from '@src/components/Icons/types'; // Importe o mapeamento de ícones
+import { Icon } from "@src/components/Icons/types";
 
 
 interface InputProps {
-    icon: IconType;
+    icon: Icon;
     action?: () => void;
 }
 
