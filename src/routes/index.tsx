@@ -1,12 +1,15 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import App from "../App";
 import Home from "@src/pages/Home";
+import Category from "@src/pages/Category";
 
 const routes = (
     <BrowserRouter>
         <Routes>
-            <Route path="/" element={<App />} >
-                <Route index element={<Home />} />
+            <Route element={<App />} >
+                <Route path="/" index element={<Home />} />
+                <Route path="*" element={<></>} />
+                <Route path="/:game/categoria" element={<Category />} />
             </Route>
         </Routes>
     </BrowserRouter>
