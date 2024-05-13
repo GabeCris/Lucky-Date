@@ -29,7 +29,6 @@ export const Label = styled.label<InputProps>`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 10px;
     
     border: none;
     outline: none;
@@ -40,6 +39,7 @@ export const Label = styled.label<InputProps>`
     width: 100%;
     height: 46px;
     cursor: pointer;
+    color: ${colors.white};
 
     input[type="radio"]{
         display: none;
@@ -67,8 +67,6 @@ export const Label = styled.label<InputProps>`
     }
 
     ${(props: InputProps) => props.isDraggable && `
-        gap: 24px;
-    
         svg{
             +input{
                 text-align: left;

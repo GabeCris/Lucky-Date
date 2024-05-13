@@ -9,7 +9,7 @@ export const Container = styled.div`
     align-items: center;
     flex-direction: column;
     gap: ${spacing.extra_small};
-    margin-bottom: ${spacing.medium};
+    width: 100%;
 `
 
 export const Title = styled.h1`

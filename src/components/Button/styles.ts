@@ -45,7 +45,6 @@ export const Button = styled.button<ButtonProps>`
         background-color: ${colors.blue};
         min-width: 150px;
         min-height: 150px;
-        gap: ${spacing.medium};
 
         span{
             color: ${colors.white};
