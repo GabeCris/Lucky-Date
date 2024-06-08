@@ -1,16 +1,16 @@
-import { ReactNode } from 'react'
+import { HTMLAttributes, ReactNode, forwardRef } from 'react'
 import * as S from "./styles.ts"
 
-interface ListProps {
-    children: ReactNode
+interface ListProps extends HTMLAttributes<HTMLElement> {
+    children: ReactNode;
 }
 
-const List = ({ children }: ListProps) => {
+const List = forwardRef<HTMLDivElement, ListProps>(({ children, ...props }, ref) => {
     return (
-        <S.List>
+        <S.List {...props} ref={ref}>
             {children}
         </S.List>
     )
-}
+})
 
 export default List

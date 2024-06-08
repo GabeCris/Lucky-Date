@@ -29,7 +29,7 @@ export const Button = styled.button<ButtonProps>`
     cursor: pointer;
         
     &:active{
-        opacity: 0.7;
+        filter: brightness(0.7);
     }
 
     &:not(:has(span)){

@@ -8,7 +8,6 @@ export const List = styled.div`
     flex-direction: column;
     row-gap: ${spacing.extra_small}; 
     overflow-y: auto;
-    padding-inline: 5px;
     margin-inline: -5px;
     width: 100%;
 

@@ -17,7 +17,7 @@ const InputDraggable = ({ data, index, onClick }: InputProps) => {
                     {...provided.dragHandleProps}
                     ref={provided.innerRef}
                 >
-                    <Input.Root isDraggable>
+                    <Input.Root isDraggable data-drag={data.id}>
                         <Input.Icon icon={Icon.DRAG} />
                         <Input.Text value={data.name} />
                         <Input.Icon icon={Icon.TRASH} action={onClick} />

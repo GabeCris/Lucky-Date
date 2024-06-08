@@ -1,17 +1,17 @@
-import { ReactNode } from 'react'
+import { HTMLAttributes, ReactNode, forwardRef } from 'react'
 import * as S from "./styles.ts"
 
-interface GridProps {
+interface GridProps extends HTMLAttributes<HTMLDivElement>{
     children: ReactNode,
     columns?: number
 }
 
-const Grid = ({ children, columns = 2 }: GridProps) => {
+const Grid = forwardRef<HTMLDivElement, GridProps>(({ children, columns = 2, ...props }, ref) => {
     return (
-        <S.Grid col={columns}>
+        <S.Grid col={columns} ref={ref} {...props}>
             {children}
         </S.Grid>
     )
-}
+})
 
 export default Grid

@@ -67,10 +67,10 @@ export const Label = styled.label<InputProps>`
     }
 
     ${(props: InputProps) => props.isDraggable && `
-        svg{
-            +input{
-                text-align: left;
-            }
+        gap: 10px;
+
+        svg + input {
+            text-align: left;
         }
     `}
 `

@@ -12,7 +12,7 @@ export const Header = styled.header`
     align-items: center;
     justify-content: space-between;
     gap: 10px;
-    padding-inline: 20px;
+    padding-inline: ${spacing.small};
 `
 
 export const Actions = styled.div`

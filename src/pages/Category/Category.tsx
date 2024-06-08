@@ -7,10 +7,12 @@ import Grid from "@src/components/Utils/Grid";
 import Fixed from "@src/components/Utils/Fixed";
 import { Button } from "@src/components/Button";
 import { Icon } from "@src/components/Icons/types";
+import { useState } from "react";
 
 const Category = () => {
 
     const { game } = useParams();
+    const [currentCategory, setCurrentCategory] = useState('')
 
     return (
         <Container>
@@ -21,7 +23,7 @@ const Category = () => {
             <Grid>
                 {categories.map(({ text, icon }) => (
                     <Input.Root>
-                        <Input.Radio value={text} name={"categories"} />
+                        <Input.Radio value={text} name={"categories"} onClick={() => setCurrentCategory(text)} />
                         <Input.Icon icon={icon} />
                     </Input.Root>
                 ))}
@@ -32,11 +34,23 @@ const Category = () => {
             <Grid columns={3}>
                 {participants.map(({ text, icon }) => (
                     <Input.Root>
-                        <Input.Radio value={text} name={"categories"} />
+                        <Input.Radio value={text} name={"participants"} />
                         <Input.Icon icon={icon} />
                     </Input.Root>
                 ))}
             </Grid>
+
+            <Fixed position={"bottom"}>
+                <Button.Root navigateTo="/">
+                    <Button.Icon icon={Icon.ARROW_LEFT} />
+                    <Button.Text text="Jogos" />
+                </Button.Root>
+
+                <Button.Root isPrimary navigateTo={`/${game}/${currentCategory.toLowerCase()}/items`}>
+                    <Button.Text text="Lista" />
+                    <Button.Icon icon={Icon.ARROW_RIGHT} />
+                </Button.Root>
+            </Fixed>
         </Container>
     )
 }
