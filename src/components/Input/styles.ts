@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import { theme } from "@src/styles/theme"
 
-const { colors, spacing, radius } = theme
+const { colors, spacing, radius, font } = theme
 
 interface InputProps {
     isDraggable?: boolean
@@ -68,19 +68,32 @@ export const Label = styled.label<InputProps>`
 
     ${(props: InputProps) => props.isDraggable && `
         gap: 10px;
-
+        margin-bottom: 12px;
         svg + input {
             text-align: left;
         }
     `}
 `
 
-export const Index = styled.aside`
-    background-color: ${colors.dark_blue_2};
-    width: 46px;
-    height: 46px;
+// export const Index = styled.aside`
+//     background-color: ${colors.dark_blue_2};
+//     width: 46px;
+//     height: 46px;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     color: ${colors.white};
+// `
+
+export const Index = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow-y: auto;
+    background-color: ${colors.dark_blue_2};
+    height: 46px;
+    width: 46px;
+    border-radius: 10px;
     color: ${colors.white};
+    font-size: ${font.small};
 `

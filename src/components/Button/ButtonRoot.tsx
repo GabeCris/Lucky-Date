@@ -4,19 +4,19 @@ import { useNavigate } from 'react-router-dom';
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     children?: ReactNode,
-    isPrimary?: boolean,
+    color?: 'primary' | 'secondary' | 'tertiary',
     isCard?: boolean,
     navigateTo?: string
     action?: () => void
 }
 
-const ButtonRoot = ({ children, isPrimary, isCard, action, navigateTo, ...props }: ButtonProps) => {
+const ButtonRoot = ({ children, color = 'primary', isCard, action, navigateTo, ...props }: ButtonProps) => {
     const navigate = useNavigate();
 
     const handleClick = () => navigateTo ? navigate(navigateTo) : action?.();
 
     return (
-        <S.Button isPrimary={isPrimary} isCard={isCard} onClick={handleClick} {...props}>
+        <S.Button color={color} isCard={isCard} onClick={handleClick} {...props}>
             {children}
         </S.Button>
     )

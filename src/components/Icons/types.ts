@@ -1,4 +1,4 @@
-import { ArrowLeftIcon, ArrowRightIcon, BurgerIcon, CardsIcon, CloverIcon, CoupleIcon, CustomIcon, DiceIcon, DragIcon, FamilyIcon, FoodIcon, FriendIcon, GameIcon, GifIcon, HelpIcon, HomeIcon, JokeIcon, LuckyDateIcon, MovieIcon, RandomIcon, RestaurantIcon, RocketIcon, ScratchIcon, SportIcon, TrashIcon, WheelIcon } from "@src/components/Icons";
+import { ArrowLeftIcon, ArrowRightIcon, BurgerIcon, CardsIcon, CloverIcon, CoupleIcon, CustomIcon, DiceIcon, DragIcon, FamilyIcon, FoodIcon, FriendIcon, GameIcon, GifIcon, HelpIcon, HomeIcon, JokeIcon, LuckyDateIcon, MovieIcon, PlusIcon, RandomIcon, RestaurantIcon, RocketIcon, ScratchIcon, SportIcon, TrashIcon, WheelIcon } from "@src/components/Icons";
 
 export enum Icon {
     ARROW_LEFT = 'arrow_left',
@@ -17,9 +17,10 @@ export enum Icon {
     GIF = 'gif',
     HELP = 'help',
     HOME = 'home',
-    MOVIE = 'movie',
     JOKE = 'joke',
     LOGO = 'lucky_date',
+    MOVIE = 'movie',
+    PLUS = 'plus',
     RANDOM = "random",
     RESTAURANT = "restaurant",
     ROCKET = "rocket",
@@ -48,6 +49,7 @@ const IconComponents = {
     [Icon.HOME]: HomeIcon,
     [Icon.LOGO]: LuckyDateIcon,
     [Icon.MOVIE]: MovieIcon,
+    [Icon.PLUS]: PlusIcon,
     [Icon.JOKE]: JokeIcon,
     [Icon.RANDOM]: RandomIcon,
     [Icon.RESTAURANT]: RestaurantIcon,

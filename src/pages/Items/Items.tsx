@@ -8,7 +8,6 @@ import Fixed from "@src/components/Utils/Fixed";
 import { Button } from "@src/components/Button";
 import { Icon } from "@src/components/Icons/types";
 import { DragDropContext, Droppable } from "@hello-pangea/dnd";
-import * as S from './styles'
 import List from "@src/components/Utils/List";
 import { useState } from "react";
 
@@ -40,34 +39,42 @@ const Items = () => {
                 <Title.Subtitle text={category as string} />
             </Title.Root>
 
-            <DragDropContext onDragEnd={onDragEnd}>
-                <Droppable droppableId="items" type="list" direction="vertical">
-                    {(provided) => (
-                        <Grid style={{ gridTemplateColumns: '46px 1fr' }}>
+            <List>
+                <DragDropContext onDragEnd={onDragEnd}>
+                    <Droppable droppableId="items" type="list" direction="vertical">
+                        {(provided) => (
                             <List
+                                isDraggable
                                 ref={provided.innerRef}
                                 {...provided.droppableProps}
-                            >
-                                {itemsList.map((_, index) => (
-                                    <S.Index>{String(index + 1).padStart(2, '0')}</S.Index>
-                                ))}
-                                {provided.placeholder}
-                            </List>
-                            <List
-                                ref={provided.innerRef}
-                                {...provided.droppableProps}
-
                             >
                                 {itemsList.map((item, index) => (
                                     <Input.Draggable key={item.id} data={item} index={index} />
                                 ))}
                                 {provided.placeholder}
                             </List>
-                        </Grid>
-                    )
-                    }
-                </Droppable>
-            </DragDropContext>
+                        )
+                        }
+                    </Droppable>
+                </DragDropContext>
+
+                <Button.Root color="tertiary" onClick={() => console.log("ADICIONOU")}>
+                    <Button.Text text="Adicionar" />
+                    <Button.Icon icon={Icon.PLUS} />
+                </Button.Root>
+            </List>
+
+            <Fixed position={"bottom"}>
+                <Button.Root color="secondary" navigateTo={`/${game}/categoria`}>
+                    <Button.Icon icon={Icon.ARROW_LEFT} />
+                    <Button.Text text="Categorias" />
+                </Button.Root>
+
+                <Button.Root navigateTo={`/${game}/${category?.toLowerCase()}/jogar`}>
+                    <Button.Text text={game ?? 'jogar'} />
+                    <Button.Icon icon={Icon.ARROW_RIGHT} />
+                </Button.Root>
+            </Fixed>
         </Container>
     )
 }

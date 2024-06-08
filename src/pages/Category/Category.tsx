@@ -41,13 +41,13 @@ const Category = () => {
             </Grid>
 
             <Fixed position={"bottom"}>
-                <Button.Root navigateTo="/">
+                <Button.Root color="secondary" navigateTo="/">
                     <Button.Icon icon={Icon.ARROW_LEFT} />
                     <Button.Text text="Jogos" />
                 </Button.Root>
 
-                <Button.Root isPrimary navigateTo={`/${game}/${currentCategory.toLowerCase()}/items`}>
-                    <Button.Text text="Lista" />
+                <Button.Root navigateTo={`/${game}/${currentCategory.toLowerCase()}/items`}>
+                    <Button.Text text="Itens" />
                     <Button.Icon icon={Icon.ARROW_RIGHT} />
                 </Button.Root>
             </Fixed>

@@ -55,6 +55,12 @@ export const categories: Categories[] = [
         icon: Icon.CUSTOM,
         id: "category__custom",
         name: "custom"
+    },
+    {
+        text: "Personalizado",
+        icon: Icon.CUSTOM,
+        id: "teste",
+        name: "a"
     }
 ]
 

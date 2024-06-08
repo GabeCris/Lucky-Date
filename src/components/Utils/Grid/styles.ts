@@ -4,7 +4,8 @@ import { theme } from "@src/styles/theme"
 const { spacing, colors } = theme
 
 interface GridProps {
-    col?: number
+    col?: number,
+    isDraggable?: boolean
 }
 
 export const Grid = styled.div<GridProps>`

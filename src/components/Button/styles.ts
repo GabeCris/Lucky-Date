@@ -3,8 +3,13 @@ import { theme } from "@src/styles/theme"
 
 const { colors, spacing, radius, font } = theme
 
+const backgroundColors = {
+    primary: colors.yellow,
+    secondary: colors.white,
+    tertiary: colors.light_blue_2,
+}
 interface ButtonProps {
-    isPrimary?: boolean
+    color?: keyof typeof backgroundColors,
     isCard?: boolean
 }
 
@@ -23,7 +28,7 @@ export const Button = styled.button<ButtonProps>`
     align-items: center;
     gap: ${spacing.extra_small};
     border-radius: ${radius};
-    background-color: ${(props: ButtonProps) => props.isPrimary ? colors.yellow : colors.white};
+    background-color: ${(props: ButtonProps) => backgroundColors[props.color ?? 'primary']};
     padding: ${spacing.extra_small} ${spacing.medium};
     min-width: 132px;
     cursor: pointer;
@@ -37,6 +42,11 @@ export const Button = styled.button<ButtonProps>`
         min-width: 28px;
         min-height: 24px;
         border-radius: 2px;
+    }
+
+    
+    span{
+        color: ${(props: ButtonProps) => props.color == "tertiary" ? colors.white : colors.blue};
     }
 
     ${(props: ButtonProps) => props.isCard && `
