@@ -4,17 +4,19 @@ import { theme } from "@src/styles/theme"
 const { spacing, colors } = theme
 
 interface GridProps {
-    col?: number
+    col?: number,
+    isDraggable?: boolean
 }
 
 export const Grid = styled.div<GridProps>`
     display: grid;
     grid-template-columns: ${({ col }) => `repeat(${col}, 1fr)`}; /* Duas colunas de largura automática */
     grid-gap: ${spacing.small}; 
-    overflow-y: auto;
-    padding-inline: 5px;
     width: 100%;
-    box-sizing: content-box;
+
+    ${(props: GridProps) => props.isDraggable && `
+       grid-template-columns: 46px 1fr;
+    `}
 
     &::-webkit-scrollbar{
         width: 3px;

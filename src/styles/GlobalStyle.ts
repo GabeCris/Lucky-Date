@@ -17,6 +17,7 @@ export const GlobalStyle = createGlobalStyle`
     h2, 
     label,
     input,
+    div,
     button{
         text-transform: uppercase;
         font: 500 14px "Oswald", sans-serif;

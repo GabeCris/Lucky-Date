@@ -3,14 +3,21 @@ import { theme } from "@src/styles/theme"
 
 const { spacing, colors } = theme
 
-export const List = styled.div`
+interface ListProps {
+    isDraggable?: boolean
+}
+
+export const List = styled.div<ListProps>`
     display: flex;
     flex-direction: column;
     row-gap: ${spacing.extra_small}; 
-    overflow-y: auto;
-    padding-inline: 5px;
-    margin-inline: -5px;
+    overflow: hidden auto;
     width: 100%;
+
+    ${(props: ListProps) => props.isDraggable && `
+       max-height: 40vh;
+       gap: 0;
+    `}
 
     &::-webkit-scrollbar{
         width: 3px;

@@ -13,11 +13,11 @@ const Header = () => {
         <S.Header>
             <LuckyDateIcon onClick={backToHome} />
             <S.Actions>
-                <Button.Root>
+                <Button.Root color='secondary'>
                     <Button.Icon icon={Icon.HELP} />
                 </Button.Root>
 
-                <Button.Root isPrimary>
+                <Button.Root>
                     <Button.Icon icon={Icon.RANDOM} />
                 </Button.Root>
 
